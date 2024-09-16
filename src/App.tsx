@@ -27,7 +27,6 @@ export function App() {
       ) : (
         <EmptyGoals />
       )}
-
       <CreateGoal />
     </Dialog>
   )

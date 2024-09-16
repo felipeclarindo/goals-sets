@@ -73,11 +73,11 @@ export async function getWeekSummary() {
           ${goalsCompletedByWeekDay.completedAtDate},
           ${goalsCompletedByWeekDay.completions}
         )
-      `
+      `,
     })
     .from(goalsCompletedByWeekDay)
 
   return {
-    summary: result,
+    summary: result[0],
   }
 }

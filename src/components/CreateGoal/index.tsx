@@ -115,14 +115,26 @@ export function CreateGoal() {
                     >
                       {Array.from({ length: 7 }).map((_, i) => {
                         const frequency = String(i + 1)
-
+                        const icons: Array<string> = [
+                          '🥱',
+                          '🙂',
+                          '😎',
+                          '😜',
+                          '🤨',
+                          '🤯',
+                          '🔥',
+                        ]
                         return (
                           <RadioGroupItem key={i} value={frequency}>
                             <RadioGroupIndicator />
                             <span className="text-zinc-300 text-sm font-medium leading-none">
-                              {frequency}x na semana
+                              {i !== 6
+                                ? `${frequency}x na semana`
+                                : 'Todos os dias da semana'}
                             </span>
-                            <span className="text-lg leading-none">🥱</span>
+                            <span className="text-lg leading-none">
+                              {icons[i]}
+                            </span>
                           </RadioGroupItem>
                         )
                       })}
